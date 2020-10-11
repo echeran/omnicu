@@ -116,10 +116,10 @@ jobs:
         run: dirs
       - name: Debug dirs 4a2
         run: dirs +0
-      - name: Debug dirs 4a3
-        run: dirs +1
+      # - name: Debug dirs 4a3
+      #   run: dirs +1
       - name: Debug dirs 4b
-        run: REL_OUTPUT_PATH="`dirs +1`/dev/output.txt" && OUTPUT_PATH_CMD="ls -d $REL_OUTPUT_PATH"
+        run: REL_OUTPUT_PATH="`dirs +0`/dev/output.txt" && OUTPUT_PATH_CMD="ls -d $REL_OUTPUT_PATH"
       - name: Debug dirs 4c
         run: OUTPUT_PATH=$(echo $OUTPUT_PATH_CMD | sh)
       - name: Debug dirs 4d
