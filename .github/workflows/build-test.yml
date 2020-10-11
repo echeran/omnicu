@@ -135,7 +135,8 @@ jobs:
           pushd $PWD && cd ${{ matrix.component }} && dirs;
           dirs;
           dirs +0;
-          export REL_OUTPUT_PATH="`dirs +0`/dev/${{ matrix.component }}/output.txt" && export OUTPUT_PATH_CMD="ls -d $REL_OUTPUT_PATH";
+          export REL_OUTPUT_PATH="`dirs +0`/dev/${{ matrix.component }}";
+          export OUTPUT_PATH_CMD="ls -d $REL_OUTPUT_PATH";
           echo $REL_OUTPUT_PATH;
           echo $OUTPUT_PATH_CMD;
           export OUTPUT_PATH=$(echo $OUTPUT_PATH_CMD | sh);
