@@ -121,33 +121,33 @@ jobs:
       #   # Push it to create a remote branch
       #   $ git push origin gh-pages:gh-pages
 
-      # Benchmarking & dashboards job > (unmerged PR only) Convert benchmark output into dashboard HTML in a commit of a branch of the local repo.
+      # # Benchmarking & dashboards job > (unmerged PR only) Convert benchmark output into dashboard HTML in a commit of a branch of the local repo.
 
-      - name: Store benchmark result & create dashboard (unmerged PR only)
-        # any action that is not a merge to master implies unfinished PR
-        if: github.event_name != 'push' || github.ref != 'refs/heads/master'
-        uses: rhysd/github-action-benchmark@v1.8.1
-        with:
-          name: Rust Benchmark
-          tool: 'cargo'
-          output-file-path: ./dev/${{ matrix.component }}/output.txt
-          benchmark-data-dir-path: ./dev/${{ matrix.component }}
-          # Show alert with commit comment on detecting possible performance regression
-          alert-threshold: '200%'  # If for nothing else, enabling the possibility of alerts with meaningful thresholds requires this job to be done per-component
-          fail-on-alert: true
-          gh-pages-branch: unmerged-pr-bench-data  # Requires one-time-only creation of this branch on remote repo.
-                                                   # We could use another branch besides `gh-pages` to store this historical benchmark info.
-          auto-push: false  # Do not store historical benchmark info of unfinished PRs. Commits seem to get made anyways, so make sure 
-                            # that the branch in `gh-pages-branch` is different from the branch used for merges to master/main branch.
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          comment-on-alert: true
-          alert-comment-cc-users: '@sffc,@zbraniecki,@echeran'
+      # - name: Store benchmark result & create dashboard (unmerged PR only)
+      #   # any action that is not a merge to master implies unfinished PR
+      #   if: github.event_name != 'push' || github.ref != 'refs/heads/master'
+      #   uses: rhysd/github-action-benchmark@v1.8.1
+      #   with:
+      #     name: Rust Benchmark
+      #     tool: 'cargo'
+      #     output-file-path: ./dev/${{ matrix.component }}/output.txt
+      #     benchmark-data-dir-path: ./dev/${{ matrix.component }}
+      #     # Show alert with commit comment on detecting possible performance regression
+      #     alert-threshold: '200%'  # If for nothing else, enabling the possibility of alerts with meaningful thresholds requires this job to be done per-component
+      #     fail-on-alert: true
+      #     gh-pages-branch: unmerged-pr-bench-data  # Requires one-time-only creation of this branch on remote repo.
+      #                                              # We could use another branch besides `gh-pages` to store this historical benchmark info.
+      #     auto-push: false  # Do not store historical benchmark info of unfinished PRs. Commits seem to get made anyways, so make sure 
+      #                       # that the branch in `gh-pages-branch` is different from the branch used for merges to master/main branch.
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     comment-on-alert: true
+      #     alert-comment-cc-users: '@sffc,@zbraniecki,@echeran'
 
       # Benchmarking & dashboards job > (PR merge to master only) Convert benchmark output into dashboard HTML in a commit of a branch of the local repo.
 
       - name: Store benchmark result & create dashboard (merge to master only)
         # only merges to master (implies PR is finished and approved by this point)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: rhysd/github-action-benchmark@v1.8.1
         with:
           name: Rust Benchmark
@@ -167,11 +167,11 @@ jobs:
       # Benchmarking & dashboards job > Upload output dashboard HTML to "persist" the files across jobs within the same workflow.
 
       - name: Switch branch to get result of benchmark pages output (merge to master only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: git checkout gh-pages
 
       - name: Upload updated benchmark data (merge to master only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           path: ./dev/**  # use wildcard pattern to preserve dir structure of uploaded files
@@ -186,9 +186,9 @@ jobs:
 
     needs: [build, format, benchmark]
 
-    ## Only create docs for merges/pushes to master (skip PRs).
-    ## Multiple unfinished PRs should not clobber docs from approved code.
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    # ## Only create docs for merges/pushes to master (skip PRs).
+    # ## Multiple unfinished PRs should not clobber docs from approved code.
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
     - uses: actions/checkout@v2
