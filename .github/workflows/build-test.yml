@@ -111,7 +111,13 @@ jobs:
         run: pushd $PWD && cd ${{ matrix.component }} && echo "`dirs +1`/dev/output.txt" && popd
       
       - name: Debug dirs 4a
-        run: pushd $PWD && cd ${{ matrix.component }}
+        run: pushd $PWD && cd ${{ matrix.component }} && dirs
+      - name: Debug dirs 4a1
+        run: dirs
+      - name: Debug dirs 4a2
+        run: dirs +0
+      - name: Debug dirs 4a3
+        run: dirs +1
       - name: Debug dirs 4b
         run: REL_OUTPUT_PATH="`dirs +1`/dev/output.txt" && OUTPUT_PATH_CMD="ls -d $REL_OUTPUT_PATH"
       - name: Debug dirs 4c
