@@ -128,8 +128,8 @@ jobs:
         run: export OUTPUT_PATH=$(echo $OUTPUT_PATH_CMD | sh)
       - name: Debug dirs 4d
         run: echo $OUTPUT_PATH;  ls $OUTPUT_PATH
-      - name: Debug dirs 4e
-        run: popd
+      # - name: Debug dirs 4e
+      #   run: popd
       - name: Debug dirs 5
         run: |
           pushd $PWD && cd ${{ matrix.component }} && dirs;
