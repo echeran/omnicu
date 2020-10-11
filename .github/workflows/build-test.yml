@@ -110,6 +110,17 @@ jobs:
       - name: Debug dirs 3
         run: pushd $PWD && cd ${{ matrix.component }} && echo "`dirs +1`/dev/output.txt" && popd
       
+      - name: Debug dirs 4a
+        run: pushd $PWD && cd ${{ matrix.component }}
+      - name: Debug dirs 4b
+        run: REL_OUTPUT_PATH="`dirs +1`/dev/output.txt" && OUTPUT_PATH_CMD="ls -d $REL_OUTPUT_PATH"
+      - name: Debug dirs 4c
+        run: OUTPUT_PATH=$(echo $OUTPUT_PATH_CMD | sh)
+      - name: Debug dirs 4d
+        run: echo $OUTPUT_PATH;  ls $OUTPUT_PATH
+      - name: Debug dirs 4e
+        run: popd
+      
       # Benchmarking & dashboards job > Run benchmark.
 
       - name: Run benchmark
