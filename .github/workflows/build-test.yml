@@ -101,6 +101,15 @@ jobs:
       - name: Create output dir
         run: mkdir -p ./dev/${{ matrix.component }}
 
+      - name: Debug dirs
+        run: ls $PWD
+
+      - name: Debug dirs 2
+        run: echo ${{ matrix.component }}
+      
+      - name: Debug dirs 3
+        run: pushd $PWD && cd ./${{ matrix.component }} && echo "`dirs +1`/dev/output.txt" && popd
+      
       # Benchmarking & dashboards job > Run benchmark.
 
       - name: Run benchmark
