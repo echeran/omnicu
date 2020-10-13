@@ -122,8 +122,10 @@ jobs:
           
           echo "ls -l $OUTPUT_PATH";
           ls -l $OUTPUT_PATH;
-          echo "echo $OUTPUT_PATH/output.txt";
-          echo $OUTPUT_PATH/output.txt;
+          echo "wc -l $OUTPUT_PATH/output.txt";
+          wc -l $OUTPUT_PATH/output.txt;
+          echo "cat $OUTPUT_PATH/output.txt";
+          cat $OUTPUT_PATH/output.txt;
 
           popd
 
