@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1602731499576,
+  "lastUpdate": 1602732363509,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -419,6 +419,36 @@ window.BENCHMARK_DATA = {
             "name": "langid/overview",
             "value": 5428,
             "range": "± 108",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "elango@google.com",
+            "name": "Elango",
+            "username": "echeran"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6ca235ff6c05459173edcaade15d92a61943afd8",
+          "message": "Merge pull request #16 from echeran/ci-bench-cleanup-test\n\nTesting PR - mock change to test manual benchmark data cleanup",
+          "timestamp": "2020-10-14T20:22:22-07:00",
+          "tree_id": "aa7e04dc8fad11f6f5681aea4b3ebff89e507a95",
+          "url": "https://github.com/echeran/icu4x/commit/6ca235ff6c05459173edcaade15d92a61943afd8"
+        },
+        "date": 1602732362707,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/overview",
+            "value": 5654,
+            "range": "± 248",
             "unit": "ns/iter"
           }
         ]
