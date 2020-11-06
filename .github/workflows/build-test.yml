@@ -235,11 +235,60 @@ jobs:
       
       - name: test printing each file
         run: |
-          while IFS= read -r line; do
-            echo "... $line ..."
+          export FILES_STR="${{ steps.file_changes.outputs.files_added}}"
+          echo "added files:"
+          echo $FILES_STR
+          echo "============"
+          export FILES=$(echo $FILES_STR | tr "," "\n")
+          echo "============"
+          for file in $FILES
+          do
+            echo "------------"
+            echo $file
+            pattern='.rs$|.toml$|.yml$'
+            if [[ $file =~ $pattern ]]
+            then
+              if ! (head -n 1 $file | egrep -q "(//|#) This file is part of ICU4X. For terms of use, please see the file")
+              then
+                echo "*** ICU4X license header not seen for [$file]"
+                exit 1
+              else
+                echo "[$file] license exists!"
+              fi
+            else
+              echo "not testing license header for [$file]"
+            fi
           done
       
 
+      - name: check PR files - modified files
+        run: |
+          export FILES_STR="${{ steps.file_changes.outputs.files_modified}}"
+          echo "modified files:"
+          echo $FILES_STR
+          echo "============"
+          export FILES=$(echo $FILES_STR | tr "," "\n")
+          echo "============"
+          for file in $FILES
+          do
+            echo "------------"
+            echo $file
+            pattern='.rs$|.toml$|.yml$'
+            if [[ $file =~ $pattern ]]
+            then
+              if ! (head -n 1 $file | egrep -q "(//|#) This file is part of ICU4X. For terms of use, please see the file")
+              then
+                echo "*** ICU4X license header not seen for [$file]"
+                exit 1
+              else
+                echo "[$file] license exists!"
+              fi
+            else
+              echo "not testing license header for [$file]"
+            fi
+            echo "------------"
+          done
+          echo "ICU4X license headers confirmed for PR-modified files matching [$pattern]"
   
   # Doc-GH-Pages job
 
