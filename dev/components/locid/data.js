@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1605232505540,
+  "lastUpdate": 1605238844984,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -587,6 +587,42 @@ window.BENCHMARK_DATA = {
             "name": "locale/overview",
             "value": 9608,
             "range": "± 436",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "elango@google.com",
+            "name": "Elango",
+            "username": "echeran"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7033c6bd7dd2c42313b73b6be295f0c0b1092fa4",
+          "message": "Merge pull request #19 from echeran/codecov\n\nTesting PR - change Coveralls -> Codecov",
+          "timestamp": "2020-11-12T19:37:08-08:00",
+          "tree_id": "46ee2ae180afff1a82095c4588cf15e10bab8cc4",
+          "url": "https://github.com/echeran/icu4x/commit/7033c6bd7dd2c42313b73b6be295f0c0b1092fa4"
+        },
+        "date": 1605238844338,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/overview",
+            "value": 4153,
+            "range": "± 10",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/overview",
+            "value": 9358,
+            "range": "± 235",
             "unit": "ns/iter"
           }
         ]
