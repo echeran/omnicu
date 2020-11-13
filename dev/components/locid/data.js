@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1605201734926,
+  "lastUpdate": 1605232505540,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -551,6 +551,42 @@ window.BENCHMARK_DATA = {
             "name": "locale/overview",
             "value": 9653,
             "range": "± 26",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "zibi@braniecki.net",
+            "name": "Zibi Braniecki",
+            "username": "zbraniecki"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "bd0d43a9383201acd02e13cba79c54856a729026",
+          "message": "Reorganize docs and add wiki articles. (#382)",
+          "timestamp": "2020-11-12T12:38:17-06:00",
+          "tree_id": "ffb79c9115631c738f6188bcaf7225b879839492",
+          "url": "https://github.com/echeran/icu4x/commit/bd0d43a9383201acd02e13cba79c54856a729026"
+        },
+        "date": 1605232504954,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/overview",
+            "value": 3974,
+            "range": "± 213",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/overview",
+            "value": 9608,
+            "range": "± 436",
             "unit": "ns/iter"
           }
         ]
