@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1605238844984,
+  "lastUpdate": 1606776728180,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -623,6 +623,42 @@ window.BENCHMARK_DATA = {
             "name": "locale/overview",
             "value": 9358,
             "range": "± 235",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sffc@google.com",
+            "name": "Shane F. Carr",
+            "username": "sffc"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4cae8e0a2f1e4d497621055c77d0446e17cbe041",
+          "message": "Populating Writeable readme with lib.rs (#389)",
+          "timestamp": "2020-11-24T17:10:57-06:00",
+          "tree_id": "bc1bfc4b39890657ec5c9bd0d56eadacaca9f587",
+          "url": "https://github.com/echeran/icu4x/commit/4cae8e0a2f1e4d497621055c77d0446e17cbe041"
+        },
+        "date": 1606776727649,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/overview",
+            "value": 4068,
+            "range": "± 80",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/overview",
+            "value": 9201,
+            "range": "± 216",
             "unit": "ns/iter"
           }
         ]
