@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1612503403889,
+  "lastUpdate": 1612503923392,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -335,6 +335,48 @@ window.BENCHMARK_DATA = {
             "name": "plurals/pluralrules/overview",
             "value": 109789,
             "range": "± 6744",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "elango@google.com",
+            "name": "Elango",
+            "username": "echeran"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "03b3486395ee1caa8970cc972c46c2ec40cd8ec7",
+          "message": "Merge pull request #22 from echeran/gregtatum/memory-benchmark-upload-fix\n\nTesting PR on echeran's fork for gregtatum/memory-benchmark-upload-fix",
+          "timestamp": "2021-02-04T21:35:52-08:00",
+          "tree_id": "d21f8c594b7fe2a7e1cff2ff8413b7331c672237",
+          "url": "https://github.com/echeran/icu4x/commit/03b3486395ee1caa8970cc972c46c2ec40cd8ec7"
+        },
+        "date": 1612503922853,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "plurals/operands/overview",
+            "value": 1483,
+            "range": "± 203",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "plurals/parser/overview",
+            "value": 6604,
+            "range": "± 469",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "plurals/pluralrules/overview",
+            "value": 98810,
+            "range": "± 6326",
             "unit": "ns/iter"
           }
         ]
