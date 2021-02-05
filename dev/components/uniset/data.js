@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1612502244454,
+  "lastUpdate": 1612503342967,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -1079,6 +1079,36 @@ window.BENCHMARK_DATA = {
             "name": "uniset/overview",
             "value": 41579206,
             "range": "± 104365",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "manishsmail@gmail.com",
+            "name": "Manish Goregaokar",
+            "username": "Manishearth"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ae89da479dfbbcfc73fbaa977cd3f4ecfd0e4fac",
+          "message": "Allow some clippy lints (#474)",
+          "timestamp": "2021-02-02T17:40:53-08:00",
+          "tree_id": "b24a02430c995fda5f39e5982049523f7037643c",
+          "url": "https://github.com/echeran/icu4x/commit/ae89da479dfbbcfc73fbaa977cd3f4ecfd0e4fac"
+        },
+        "date": 1612503342406,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "uniset/overview",
+            "value": 38188127,
+            "range": "± 95702",
             "unit": "ns/iter"
           }
         ]
